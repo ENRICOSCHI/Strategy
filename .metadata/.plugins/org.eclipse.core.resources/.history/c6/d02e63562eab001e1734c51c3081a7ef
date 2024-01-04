@@ -1,0 +1,4 @@
+
+public enum Seme {
+	Denari, Bastone, Coppe, Spade
+}

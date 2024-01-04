@@ -1,0 +1,69 @@
+import java.util.*;
+
+public class Strategia {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Mazzo Mazzone = new Mazzo();
+		//Ordine Casuale
+		OrdinamentoCarte MazzoCasuale = new OrdinamentoCasuale();
+		MazzoCasuale.ordinaMazzo(Mazzone.GetMazzo());
+		Mazzone.StampaMazzo();
+		//Ordine Crescente
+		OrdinamentoCarte MazzoCrescente = new OrdinamentoCrescente();
+		MazzoCrescente.ordinaMazzo(Mazzone.GetMazzo());
+		Mazzone.StampaMazzo();
+	}
+}
+
+
+class Mazzo {
+	private String[] seme = {"Bastone","Denari","Coppe","Spade"};
+	private String[] valore = {"Asso","2","3","4","5","6","7","Fante","Cavallo","Re"};
+	private List<String> mazzo = new ArrayList<>();
+	
+	public Mazzo() {
+		
+		for(String semi:seme) {
+			for (String valori:valore) {
+				String carta = valori +" " + semi;
+				mazzo.add(carta);//add vuole solo una stringa
+			}
+		}
+	}
+	
+	public String[] GetSeme() {
+		return seme;
+	}
+	public String[] GetValore() {
+		return valore;
+	}
+	public List<String> GetMazzo(){
+		return mazzo;
+	}
+	public void StampaMazzo() {
+		for (String carta : mazzo) {
+			System.out.println(carta);
+		}
+	}
+}
+//Interfaccia per l'ordinamento delle carte
+interface OrdinamentoCarte {
+ void ordinaMazzo(List<String> mazzo);
+}
+
+//Strategia di ordinamento casuale
+class OrdinamentoCasuale implements OrdinamentoCarte {
+ @Override
+ public void ordinaMazzo(List<String> mazzo) {
+     Collections.shuffle(mazzo);
+ }
+}
+
+//Strategia di ordinamento dalla minore alla maggiore
+class OrdinamentoCrescente implements OrdinamentoCarte {
+ @Override
+ public void ordinaMazzo(List<String> mazzo) {
+     Collections.sort(mazzo);
+ }
+}

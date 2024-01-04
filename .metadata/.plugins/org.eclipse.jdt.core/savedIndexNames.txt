@@ -1,0 +1,8 @@
+INDEX VERSION 1.131+E:\EnricoFioreInformtaica\java\Strategy\.metadata\.plugins\org.eclipse.jdt.core
+1320569788.index
+1540443455.index
+3292477232.index
+2635484775.index
+3425172869.index
+1865797976.index
+3428821490.index

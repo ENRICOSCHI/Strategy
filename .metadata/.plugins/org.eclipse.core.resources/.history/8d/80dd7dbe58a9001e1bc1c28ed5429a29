@@ -1,0 +1,20 @@
+
+public class Strategia {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+public enum Seme{
+	Denari, Bastone, Coppe, Spade
+}
+class Carta{
+	
+}
+
+class Mazzo {
+
+}
