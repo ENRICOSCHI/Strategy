@@ -16,30 +16,36 @@ public class Strategia {
 		System.out.print("Ordinamento CRESCENTE: \n");
 		Mazzone.StampaMazzo();
 	}
+	
+	
 }
 
-
-class Mazzo {
+class Carta{
 	private String[] semi = {"Bastone","Denari","Coppe","Spade"};
 	private String[] valori = {"Asso","2","3","4","5","6","7","Fante","Cavallo","Re"};
-	private List<String> mazzo = new ArrayList<>();
 	
-	public Mazzo() {
-		
-		for(String seme:semi) {
-			for (String valore:valori) {
-				String carta = valore +" " + seme;
-				mazzo.add(carta);//add vuole solo una stringa
-			}
-		}
+	public Carta() {
 	}
-	
 	public String[] GetSeme() {
 		return semi;
 	}
 	public String[] GetValore() {
 		return valori;
 	}
+}
+class Mazzo extends Carta{
+	Carta carta = new Carta();
+	private List<String> mazzo = new ArrayList<>();
+	
+	public Mazzo() {
+		for(String seme:carta.GetSeme()) {
+			for (String valore:carta.GetValore()) {
+				String carta = valore +" " + seme;
+				mazzo.add(carta);//add vuole solo una stringa
+			}
+		}
+	}
+	
 	public List<String> GetMazzo(){
 		return mazzo;
 	}
